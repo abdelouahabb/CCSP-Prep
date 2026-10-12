@@ -3,7 +3,7 @@ window.CCSP_DOMAIN_3 = {
   number: 3,
   title: "Cloud Platform & Infrastructure Security",
   weight: "17%",
-  color: "#8b5cf6",
+  color: "#0369a1",
   icon: "server-shield",
   examMindset: "In Domain 3, you must think like both a Cloud Provider Datacenter Architect AND an Enterprise Cloud Infrastructure Architect. You WILL be tested on physical datacenter numbers (Uptime Institute Tiers I–IV, ASHRAE temperature/humidity ranges), Software-Defined Networking (SDN decoupling the Control Plane from the Data Plane), the Management Plane ('the keys to the kingdom'), IAM Federation protocols (SAML 2.0 vs OAuth 2.0 vs OIDC vs SCIM), and the 5 levels of BCDR testing.",
   cards: [

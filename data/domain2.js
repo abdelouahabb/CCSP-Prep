@@ -3,7 +3,7 @@ window.CCSP_DOMAIN_2 = {
   number: 2,
   title: "Cloud Data Security",
   weight: "20%",
-  color: "#10b981",
+  color: "#0f766e",
   icon: "database-zap",
   examMindset: "Domain 2 is the LARGEST domain on the CCSP exam (20% of your score). Memorize the 6 phases of the Cloud Data Lifecycle (Create, Store, Use, Share, Archive, Destroy — 'CSUADS'), know when data classification happens (during Create!), understand where encryption keys should live (separate from the CSP data plane!), and master the exact differences between Tokenization, Masking, Anonymization, DLP, and IRM.",
   cards: [

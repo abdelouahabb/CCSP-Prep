@@ -3,7 +3,7 @@ window.CCSP_DOMAIN_6 = {
   number: 6,
   title: "Legal, Risk and Compliance",
   weight: "13%",
-  color: "#ef4444",
+  color: "#991b1b",
   icon: "scale",
   examMindset: "In Domain 6, think like a CISO working closely with General Counsel and Internal Audit. You DO NOT need to memorize obscure court case numbers, but you MUST know the difference between Criminal, Civil/Tort, and Administrative/Regulatory law; the 4 Intellectual Property types; GDPR cross-border transfer mechanisms (Adequacy, BCRs, SCCs); US sector laws (HIPAA, GLBA, SOX, FERPA, CLOUD Act); PCI-DSS (contractual, not a government law!); ISO/IEC 27050 eDiscovery; the 4 Risk Treatment options; and SLA vs MSA contract clauses.",
   cards: [

@@ -3,7 +3,7 @@ window.CCSP_DOMAIN_4 = {
   number: 4,
   title: "Cloud Application Security",
   weight: "17%",
-  color: "#f59e0b",
+  color: "#b45309",
   icon: "code-xml",
   examMindset: "In Domain 4, ISC2 tests how you build, test, and protect applications in the cloud. You MUST know the exact Secure SDLC phases (and what security activity happens in each phase!), ISO/IEC 27034 (ONF vs ANF), Threat Modeling (STRIDE, PASTA, DREAD), SAST vs DAST vs IAST vs SCA vs RASP, OWASP vulnerabilities (especially SSRF hitting cloud metadata `169.254.169.254`, Injection, XSS, CSRF), and supplemental security tools (WAF, API Gateway, DAM, XML Firewall, CASB).",
   cards: [

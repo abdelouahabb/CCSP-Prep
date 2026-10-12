@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ISC2 CCSP Mastery Hub — Interactive Deep-Dive Study & Exam Simulator</title>
+  <title>ISC2 CCSP Mastery Hub — Interactive Deep-Dive Study &amp; Exam Simulator</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -19,35 +19,30 @@
 
     <nav class="topbar-nav" role="navigation" aria-label="Main Navigation">
       <button class="nav-btn active" data-tab="dashboard" onclick="app.switchTab('dashboard')">
-        <span class="nav-icon">📊</span>
         <span>Dashboard</span>
       </button>
       <button class="nav-btn" data-tab="cards" onclick="app.switchTab('cards')">
-        <span class="nav-icon">🗂️</span>
-        <span>Interactive Study Cards</span>
+        <span>Study Cards</span>
         <span class="nav-pill" id="nav-cards-count">70</span>
       </button>
       <button class="nav-btn" data-tab="quiz" onclick="app.switchTab('quiz')">
-        <span class="nav-icon">🎯</span>
-        <span>Quiz &amp; Exam Simulator</span>
+        <span>Exam Simulator</span>
       </button>
       <button class="nav-btn" data-tab="qbank" onclick="app.switchTab('qbank')">
-        <span class="nav-icon">📚</span>
-        <span>Question Bank Reference</span>
+        <span>Question Bank</span>
         <span class="nav-pill" id="nav-qbank-count">180</span>
       </button>
       <button class="nav-btn" data-tab="reference" onclick="app.switchTab('reference')">
-        <span class="nav-icon">🧭</span>
-        <span>Standards &amp; Cheat Sheets</span>
+        <span>Standards &amp; Reference</span>
       </button>
     </nav>
 
     <div class="topbar-actions">
-      <button class="icon-btn" id="theme-toggle-btn" onclick="app.toggleTheme()" title="Toggle Dark/Light Theme">
-        🌓
+      <button class="btn btn-outline btn-sm" id="theme-toggle-btn" onclick="app.toggleTheme()" title="Toggle Dark/Light Theme">
+        Theme
       </button>
-      <button class="icon-btn danger-hover" onclick="app.resetProgressPrompt()" title="Reset Saved Progress">
-        🔄
+      <button class="btn btn-outline btn-sm danger-hover" onclick="app.resetProgressPrompt()" title="Reset Saved Progress">
+        Reset Progress
       </button>
     </div>
   </header>
@@ -66,28 +61,28 @@
           </p>
           <div class="hero-actions">
             <button class="btn btn-primary" onclick="app.startStudyDeck('all')">
-              🗂️ Launch Interactive Study Deck
+              Launch Interactive Study Deck
             </button>
             <button class="btn btn-accent" onclick="app.quickStartQuiz('learn', 'all', 15)">
-              ⚡ Quick 15-Question Deep-Learn Quiz
+              Quick 15-Question Deep-Learn Quiz
             </button>
             <button class="btn btn-outline" onclick="app.quickStartQuiz('missed', 'all', 20)">
-              🎯 Drill Missed &amp; Weak Questions
+              Drill Missed &amp; Weak Questions
             </button>
           </div>
         </div>
         <div class="hero-stats-grid">
           <div class="stat-card">
             <div class="stat-label">Cards Mastered</div>
-            <div class="stat-value" id="stat-cards-mastered">0 / 61</div>
+            <div class="stat-value" id="stat-cards-mastered">0 / 70</div>
             <div class="progress-bar"><div class="progress-fill" id="bar-cards-mastered" style="width:0%"></div></div>
             <div class="stat-sub" id="stat-cards-sub">0% of concepts mastered</div>
           </div>
           <div class="stat-card">
             <div class="stat-label">Questions Answered</div>
-            <div class="stat-value" id="stat-q-answered">0 / 167</div>
+            <div class="stat-value" id="stat-q-answered">0 / 180</div>
             <div class="progress-bar"><div class="progress-fill accent" id="bar-q-answered" style="width:0%"></div></div>
-            <div class="stat-sub" id="stat-q-sub">167 scenario questions in DB</div>
+            <div class="stat-sub" id="stat-q-sub">180 scenario questions in DB</div>
           </div>
           <div class="stat-card">
             <div class="stat-label">Overall Quiz Accuracy</div>
@@ -107,7 +102,7 @@
       <div class="section-header">
         <div>
           <h3>The 6 Official ISC2 CCSP Exam Domains</h3>
-          <p>Click any domain to study its interactive concept cards or launch a domain-focused quiz.</p>
+          <p>Select any domain to study its interactive concept cards or launch a domain-focused quiz.</p>
         </div>
       </div>
       <div class="domains-grid" id="dashboard-domains-grid"></div>
@@ -115,7 +110,7 @@
       <!-- Exam Mindset Golden Rules -->
       <div class="section-header" style="margin-top: 2.5rem;">
         <div>
-          <h3>🧠 The 6 Golden Rules of the ISC2 CCSP Exam Mindset</h3>
+          <h3>The 6 Golden Rules of the ISC2 CCSP Exam Mindset</h3>
           <p>Read these before answering any scenario question—ISC2 tests whether you think like a risk-aware Cloud Security Advisor and Architect, not just a hands-on sysadmin.</p>
         </div>
       </div>
@@ -127,8 +122,7 @@
       <div class="toolbar-panel">
         <div class="toolbar-row">
           <div class="search-box">
-            <span class="search-icon">🔍</span>
-            <input type="text" id="cards-search" placeholder="Search concepts, standards (e.g., ISO 27034, SAML, Crypto-shredding, Tier III)..." oninput="app.renderCardsView()" />
+            <input type="text" id="cards-search" style="padding-left:0.9rem;" placeholder="Search concepts, standards (e.g., ISO 27034, SAML, Crypto-shredding, Tier III)..." oninput="app.renderCardsView()" />
           </div>
           <select id="cards-domain-filter" class="filter-select" onchange="app.renderCardsView()">
             <option value="all">All 6 Domains</option>
@@ -141,14 +135,14 @@
           </select>
           <select id="cards-status-filter" class="filter-select" onchange="app.renderCardsView()">
             <option value="all">All Statuses</option>
-            <option value="unread">🆕 New / Unread</option>
-            <option value="learning">🔄 Still Learning</option>
-            <option value="mastered">✅ Mastered</option>
-            <option value="bookmarked">⭐ Bookmarked</option>
+            <option value="unread">Status: New / Unread</option>
+            <option value="learning">Status: In Review</option>
+            <option value="mastered">Status: Mastered</option>
+            <option value="bookmarked">Status: Bookmarked</option>
           </select>
           <div class="view-mode-toggle">
-            <button class="mode-btn active" id="btn-mode-deck" onclick="app.setCardMode('deck')">🃏 Interactive Deck</button>
-            <button class="mode-btn" id="btn-mode-grid" onclick="app.setCardMode('grid')">📋 All Cards Grid</button>
+            <button class="mode-btn active" id="btn-mode-deck" onclick="app.setCardMode('deck')">Interactive Deck</button>
+            <button class="mode-btn" id="btn-mode-grid" onclick="app.setCardMode('grid')">All Cards Grid</button>
           </div>
         </div>
       </div>
@@ -168,7 +162,7 @@
       <!-- Quiz Setup Screen -->
       <div id="quiz-setup-panel" class="quiz-setup-panel">
         <div class="setup-header">
-          <h2>🎯 CCSP Interactive Quiz &amp; Exam Simulator</h2>
+          <h2>CCSP Interactive Quiz &amp; Exam Simulator</h2>
           <p>Configure your session below. Choose <strong>Deep-Learn Practice Mode</strong> for instant multi-layered explanations on every choice, or <strong>Timed Exam Simulator</strong> to test your stamina under real exam conditions.</p>
         </div>
 
@@ -178,12 +172,12 @@
             <div class="radio-cards" id="quiz-mode-selector">
               <label class="radio-card selected" onclick="app.selectQuizMode('learn')">
                 <input type="radio" name="quizMode" value="learn" checked />
-                <div class="radio-card-title">💡 Deep-Learn Practice Mode (Recommended)</div>
+                <div class="radio-card-title">Deep-Learn Practice Mode (Recommended)</div>
                 <div class="radio-card-desc">Immediate feedback after each question with full explanation, distractor breakdown of why each wrong option fails, and ISC2 exam tips.</div>
               </label>
               <label class="radio-card" onclick="app.selectQuizMode('exam')">
                 <input type="radio" name="quizMode" value="exam" />
-                <div class="radio-card-title">⏱️ Timed Exam Simulation Mode</div>
+                <div class="radio-card-title">Timed Exam Simulation Mode</div>
                 <div class="radio-card-desc">Simulates the real ISC2 exam: countdown timer, question flagging, no answers shown until you submit, followed by a full diagnostic breakdown.</div>
               </label>
             </div>
@@ -206,8 +200,8 @@
               <option value="all">All Questions in Selected Domain(s)</option>
               <option value="unanswered">Unanswered Questions Only</option>
               <option value="missed">Previously Missed / Incorrect Questions Only</option>
-              <option value="bookmarked">⭐ Bookmarked Questions Only</option>
-              <option value="hard">🔥 Hard Difficulty Questions Only</option>
+              <option value="bookmarked">Bookmarked Questions Only</option>
+              <option value="hard">Hard Difficulty Questions Only</option>
             </select>
 
             <label class="setup-label" style="margin-top: 1.25rem;">4. Number of Questions</label>
@@ -222,7 +216,7 @@
 
             <div style="margin-top: 1.75rem;">
               <button class="btn btn-primary btn-large full-width" onclick="app.launchConfiguredQuiz()">
-                🚀 Start Quiz Session
+                Start Quiz Session
               </button>
             </div>
           </div>
@@ -241,11 +235,10 @@
       <div class="toolbar-panel">
         <div class="toolbar-row">
           <div class="search-box">
-            <span class="search-icon">🔍</span>
-            <input type="text" id="qbank-search" placeholder="Search all 167 questions, answers, explanations, or topics..." oninput="app.renderQBankView()" />
+            <input type="text" id="qbank-search" style="padding-left:0.9rem;" placeholder="Search all 180 questions, answers, explanations, or topics..." oninput="app.renderQBankView()" />
           </div>
           <select id="qbank-domain-filter" class="filter-select" onchange="app.renderQBankView()">
-            <option value="all">All 6 Domains (167 Questions)</option>
+            <option value="all">All 6 Domains (180 Questions)</option>
             <option value="domain1">Domain 1: Concepts &amp; Architecture</option>
             <option value="domain2">Domain 2: Cloud Data Security</option>
             <option value="domain3">Domain 3: Platform &amp; Infrastructure</option>
@@ -261,13 +254,13 @@
           </select>
           <select id="qbank-status-filter" class="filter-select" onchange="app.renderQBankView()">
             <option value="all">All History</option>
-            <option value="missed">❌ Previously Missed</option>
-            <option value="correct">✅ Answered Correctly</option>
-            <option value="unanswered">⚪ Unanswered</option>
-            <option value="bookmarked">⭐ Bookmarked</option>
+            <option value="missed">Status: Previously Missed</option>
+            <option value="correct">Status: Answered Correctly</option>
+            <option value="unanswered">Status: Unanswered</option>
+            <option value="bookmarked">Status: Bookmarked</option>
           </select>
           <button class="btn btn-outline btn-sm" id="qbank-reveal-all-btn" onclick="app.toggleRevealAllQBank()">
-            👁️ Reveal All Explanations
+            Reveal All Explanations
           </button>
         </div>
       </div>
@@ -280,22 +273,21 @@
     <section id="view-reference" class="view-section">
       <div class="section-header">
         <div>
-          <h2>🧭 CCSP Master Reference: Standards, Shared Responsibility &amp; Cheat Sheets</h2>
+          <h2>CCSP Master Reference: Standards, Shared Responsibility &amp; Cheat Sheets</h2>
           <p>Everything you need to memorize before walking into the Pearson VUE testing center.</p>
         </div>
       </div>
 
       <div class="ref-tabs">
-        <button class="ref-tab active" data-reftab="standards" onclick="app.switchRefTab('standards')">📜 ISO / NIST / SOC / CSA Standards Matrix</button>
-        <button class="ref-tab" data-reftab="shared" onclick="app.switchRefTab('shared')">🤝 Shared Responsibility Matrix</button>
-        <button class="ref-tab" data-reftab="numbers" onclick="app.switchRefTab('numbers')">🔢 Critical Exam Numbers, Formulas &amp; Comparisons</button>
+        <button class="ref-tab active" data-reftab="standards" onclick="app.switchRefTab('standards')">ISO / NIST / SOC / CSA Standards Matrix</button>
+        <button class="ref-tab" data-reftab="shared" onclick="app.switchRefTab('shared')">Shared Responsibility Matrix</button>
+        <button class="ref-tab" data-reftab="numbers" onclick="app.switchRefTab('numbers')">Critical Exam Numbers, Formulas &amp; Comparisons</button>
       </div>
 
       <div id="ref-content-standards" class="ref-panel active">
         <div class="toolbar-panel" style="margin-bottom: 1rem;">
           <div class="search-box">
-            <span class="search-icon">🔍</span>
-            <input type="text" id="standards-search" placeholder="Filter standards (e.g., 27017, 27018, 27034, 27040, 27050, 800-145, SOC 2, FIPS)..." oninput="app.renderStandardsTable()" />
+            <input type="text" id="standards-search" style="padding-left:0.9rem;" placeholder="Filter standards (e.g., 27017, 27018, 27034, 27040, 27050, 800-145, SOC 2, FIPS)..." oninput="app.renderStandardsTable()" />
           </div>
         </div>
         <div class="table-responsive" id="standards-table-container"></div>

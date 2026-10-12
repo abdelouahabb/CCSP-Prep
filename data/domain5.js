@@ -3,7 +3,7 @@ window.CCSP_DOMAIN_5 = {
   number: 5,
   title: "Cloud Security Operations",
   weight: "16%",
-  color: "#ec4899",
+  color: "#15803d",
   icon: "radar",
   examMindset: "In Domain 5, you wear the hat of the Cloud Security Operations Center (SOC) Lead, Incident Responder, Digital Forensics Investigator, and ITIL Service Manager. Know the exact order of the Incident Response Lifecycle (NIST SP 800-61), why Cloud Forensics is fundamentally different from on-premises forensics (multi-tenancy, no physical seizure, volatile containers, snapshot/memory capture, Chain of Custody), Order of Volatility (RFC 3227), NTP in UTC, and ITIL operational processes (Change vs Configuration vs Problem vs Incident Management).",
   cards: [

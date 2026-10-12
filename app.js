@@ -331,10 +331,10 @@
               </div>
               <div class="domain-actions">
                 <button class="btn btn-outline btn-sm" onclick="app.startStudyDeck('${dom.id}')">
-                  🗂️ Study Cards (${dCards})
+                  Study Cards (${dCards})
                 </button>
                 <button class="btn btn-primary btn-sm" onclick="app.quickStartQuiz('learn', '${dom.id}', 15)">
-                  🎯 Practice Quiz (${dQs})
+                  Practice Quiz (${dQs})
                 </button>
               </div>
             </div>
@@ -410,7 +410,7 @@
         if (domObj) {
           banner.classList.remove("hidden");
           banner.style.borderLeftColor = domObj.color;
-          banner.innerHTML = `<strong>💡 Domain ${domObj.number} Exam Mindset (${escapeHtml(domObj.title)} — ${domObj.weight}):</strong> ${escapeHtml(domObj.examMindset)}`;
+          banner.innerHTML = `<strong>Domain ${domObj.number} Exam Mindset (${escapeHtml(domObj.title)} — ${domObj.weight}):</strong> ${escapeHtml(domObj.examMindset)}`;
         }
       } else {
         banner.classList.add("hidden");
@@ -434,16 +434,16 @@
             <span class="badge badge-domain" style="background:${card.domainColor}">Domain ${card.domainNumber}</span>
             <span class="badge badge-topic">${escapeHtml(card.topic)}</span>
             <span class="badge ${card.importance.includes("Critical") ? "badge-critical" : "badge-high"}">
-              🔥 ${escapeHtml(card.importance)}
+              Priority: ${escapeHtml(card.importance)}
             </span>
           </div>
           <div style="display:flex;gap:0.5rem;align-items:center;">
             <button class="status-btn" onclick="app.toggleCardBookmark('${card.id}', ${isModal})" title="Bookmark this concept">
-              ${isBookmarked ? "⭐ Bookmarked" : "☆ Bookmark"}
+              ${isBookmarked ? "Bookmarked" : "Bookmark"}
             </button>
             ${
               isModal
-                ? `<button class="status-btn" onclick="app.closeCardModal()">✕ Close</button>`
+                ? `<button class="status-btn" onclick="app.closeCardModal()">Close</button>`
                 : ""
             }
           </div>
@@ -452,7 +452,7 @@
         <h2 class="study-card-title">${escapeHtml(card.title)}</h2>
 
         <div class="superficial-box">
-          <div class="superficial-label">🧐 Common Superficial View (What Beginners Think)</div>
+          <div class="superficial-label">Common Superficial View (What Beginners Assume)</div>
           <div class="superficial-text">"${escapeHtml(card.superficialView)}"</div>
         </div>
 
@@ -460,8 +460,8 @@
           !revealed
             ? `
           <div class="flip-reveal-prompt" onclick="app.toggleRevealCard()">
-            <div style="font-size:1.3rem;font-weight:800;color:var(--primary);margin-bottom:0.35rem;">
-              🔓 Click or Press [Space] to Reveal Full CCSP Architect Deep-Dive
+            <div style="font-size:1.25rem;font-weight:800;color:var(--primary);margin-bottom:0.35rem;">
+              Click or Press [Space] to Reveal Full CCSP Architect Deep-Dive
             </div>
             <div style="font-size:0.88rem;color:var(--text-muted);">
               Includes technical architecture, real-world scenario, shared responsibility, standards, and ISC2 exam traps
@@ -472,11 +472,11 @@
           <div class="deep-dive-body">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
               <span style="font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--success);">
-                🎓 Deep CCSP Architect Reality &amp; Full Explanation
+                Deep CCSP Architect Reality &amp; Full Explanation
               </span>
               ${
                 !isModal
-                  ? `<button class="btn btn-outline btn-sm" onclick="app.toggleRevealCard()">🙈 Collapse Deep-Dive</button>`
+                  ? `<button class="btn btn-outline btn-sm" onclick="app.toggleRevealCard()">Collapse Deep-Dive</button>`
                   : ""
               }
             </div>
@@ -486,22 +486,22 @@
 
             <div class="card-callouts-grid">
               <div class="callout-box scenario">
-                <div class="callout-title" style="color:var(--primary);">🏢 Real-World Cloud Scenario</div>
+                <div class="callout-title" style="color:var(--primary);">Real-World Cloud Scenario</div>
                 <div>${escapeHtml(card.realWorldScenario)}</div>
               </div>
               <div class="callout-box shared">
-                <div class="callout-title" style="color:var(--success);">🤝 Shared Responsibility Breakdown</div>
+                <div class="callout-title" style="color:var(--success);">Shared Responsibility Breakdown</div>
                 <div>${escapeHtml(card.sharedResponsibility)}</div>
               </div>
               <div class="callout-box trap">
-                <div class="callout-title" style="color:var(--danger);">⚠️ ISC2 Exam Trap — Watch Out For This!</div>
+                <div class="callout-title" style="color:var(--danger);">ISC2 Exam Trap — Watch Out For This</div>
                 <div><strong>${escapeHtml(card.examTrap)}</strong></div>
               </div>
             </div>
 
             <div class="standards-tags">
               <span style="font-size:0.78rem;font-weight:700;color:var(--text-muted);align-self:center;">Key Standards &amp; Frameworks:</span>
-              ${(card.standards || []).map((s) => `<span class="std-tag">📜 ${escapeHtml(s)}</span>`).join("")}
+              ${(card.standards || []).map((s) => `<span class="std-tag">${escapeHtml(s)}</span>`).join("")}
             </div>
           </div>
         `
@@ -511,18 +511,18 @@
           <div class="mastery-buttons">
             <span style="font-size:0.84rem;color:var(--text-muted);align-self:center;margin-right:0.25rem;">Mark Mastery:</span>
             <button class="status-btn ${st === "learning" ? "active-learning" : ""}" onclick="app.setCardStatus('${card.id}', 'learning', ${isModal})">
-              🔄 Still Learning / Review Again
+              In Review
             </button>
             <button class="status-btn ${st === "mastered" ? "active-mastered" : ""}" onclick="app.setCardStatus('${card.id}', 'mastered', ${isModal})">
-              ✅ Mastered Concept
+              Mastered
             </button>
           </div>
           ${
             !isModal
               ? `
             <div style="display:flex;gap:0.5rem;">
-              <button class="btn btn-outline btn-sm" onclick="app.prevCard()">← Previous Card</button>
-              <button class="btn btn-primary btn-sm" onclick="app.nextCard()">Next Card →</button>
+              <button class="btn btn-outline btn-sm" onclick="app.prevCard()">&larr; Previous Card</button>
+              <button class="btn btn-primary btn-sm" onclick="app.nextCard()">Next Card &rarr;</button>
             </div>
           `
               : ""
@@ -550,13 +550,13 @@
           <div class="deck-counter">
             Showing Card <strong>${this.currentCardIndex + 1}</strong> of <strong>${this.filteredCards.length}</strong>
             <span style="margin-left:0.75rem;font-weight:500;font-size:0.82rem;color:var(--text-subtle);">
-              (Tip: Use ⬅️ ➡️ arrow keys to navigate, [Space] to expand/collapse)
+              (Tip: Use Left/Right arrow keys to navigate, [Space] to expand/collapse)
             </span>
           </div>
           <div class="deck-controls">
-            <button class="btn btn-outline btn-sm" onclick="app.prevCard()">← Prev</button>
-            <button class="btn btn-outline btn-sm" onclick="app.shuffleCards()">🔀 Shuffle Deck</button>
-            <button class="btn btn-primary btn-sm" onclick="app.nextCard()">Next →</button>
+            <button class="btn btn-outline btn-sm" onclick="app.prevCard()">&larr; Prev</button>
+            <button class="btn btn-outline btn-sm" onclick="app.shuffleCards()">Shuffle Deck</button>
+            <button class="btn btn-primary btn-sm" onclick="app.nextCard()">Next &rarr;</button>
           </div>
         </div>
         <div class="study-card-stage">
@@ -576,10 +576,10 @@
           const st = state.cardStatus[c.id] || "unread";
           const stBadge =
             st === "mastered"
-              ? `<span class="badge" style="background:var(--success-bg);color:var(--success);">✅ Mastered</span>`
+              ? `<span class="badge" style="background:var(--success-bg);color:var(--success);">Mastered</span>`
               : st === "learning"
-              ? `<span class="badge" style="background:var(--warning-bg);color:var(--warning);">🔄 Learning</span>`
-              : `<span class="badge badge-topic">🆕 Unread</span>`;
+              ? `<span class="badge" style="background:var(--warning-bg);color:var(--warning);">In Review</span>`
+              : `<span class="badge badge-topic">Unread</span>`;
 
           return `
             <div class="grid-card-item" onclick="app.openCardModal('${c.id}')">
@@ -593,7 +593,7 @@
               </div>
               <div style="display:flex;justify-content:space-between;align-items:center;padding-top:0.75rem;border-top:1px solid var(--border-color);font-size:0.8rem;color:var(--primary);font-weight:700;">
                 <span>${escapeHtml(c.topic)}</span>
-                <span>Open Deep-Dive →</span>
+                <span>Open Deep-Dive &rarr;</span>
               </div>
             </div>
           `;
@@ -718,9 +718,8 @@
       });
 
       if (candidates.length === 0) {
-        // Fallback if user has no missed/bookmarked questions yet
         if (pool === "missed") {
-          alert("You don't have any missed questions in this domain yet! Launching with unanswered/all questions instead.");
+          alert("You don't have any missed questions in this domain yet. Launching with all questions in this selection instead.");
           candidates = ALL_QUESTIONS.filter((q) => domain === "all" || q.domainId === domain);
         } else {
           alert("No questions matched your filter criteria. Please broaden your selection.");
@@ -761,12 +760,12 @@
         if (timerEl) {
           if (this.activeQuiz.mode === "exam") {
             const rem = Math.max(0, this.activeQuiz.totalSecondsAllowed - this.activeQuiz.elapsedSeconds);
-            timerEl.textContent = `⏳ ${this.formatTime(rem)}`;
+            timerEl.textContent = `Time Remaining: ${this.formatTime(rem)}`;
             if (rem === 0) {
               this.finishQuiz();
             }
           } else {
-            timerEl.textContent = `⏱️ ${this.formatTime(this.activeQuiz.elapsedSeconds)}`;
+            timerEl.textContent = `Elapsed: ${this.formatTime(this.activeQuiz.elapsedSeconds)}`;
           }
         }
       }, 1000);
@@ -810,17 +809,17 @@
             <span class="quiz-timer-badge" id="quiz-live-timer">
               ${
                 qz.mode === "exam"
-                  ? `⏳ ${this.formatTime(Math.max(0, qz.totalSecondsAllowed - qz.elapsedSeconds))}`
-                  : `⏱️ ${this.formatTime(qz.elapsedSeconds)}`
+                  ? `Time Remaining: ${this.formatTime(Math.max(0, qz.totalSecondsAllowed - qz.elapsedSeconds))}`
+                  : `Elapsed: ${this.formatTime(qz.elapsedSeconds)}`
               }
             </span>
             <button class="btn btn-outline btn-sm" onclick="app.toggleQuizFlag(${idx})">
-              ${isFlagged ? "🚩 Flagged" : "🏳️ Flag"}
+              ${isFlagged ? "Flagged" : "Flag"}
             </button>
             <button class="btn btn-outline btn-sm" onclick="app.toggleQuestionBookmark('${q.id}', true)">
-              ${isBookmarked ? "⭐ Saved" : "☆ Bookmark"}
+              ${isBookmarked ? "Bookmarked" : "Bookmark"}
             </button>
-            <button class="btn btn-outline btn-sm" onclick="app.exitQuizToSetup()">✕ Quit</button>
+            <button class="btn btn-outline btn-sm" onclick="app.exitQuizToSetup()">Exit Quiz</button>
           </div>
         </div>
 
@@ -857,8 +856,8 @@
               <div class="exp-verdict" style="color:${chosen === q.correctIndex ? "var(--success)" : "var(--danger)"}">
                 ${
                   chosen === q.correctIndex
-                    ? "✅ Correct! Deep-Dive Architectural Explanation:"
-                    : `❌ Not Quite — You selected ${letters[chosen]}, but the correct answer is ${letters[q.correctIndex]}:`
+                    ? "Correct — Deep-Dive Architectural Explanation:"
+                    : `Incorrect — You selected ${letters[chosen]}, but the correct answer is ${letters[q.correctIndex]}:`
                 }
               </div>
               <div class="exp-core">
@@ -868,7 +867,7 @@
                 q.distractorAnalysis && q.distractorAnalysis.length
                   ? `
                 <div class="distractor-box">
-                  <h5>🔍 Why the Other Options (Distractors) Fail:</h5>
+                  <h5>Why the Other Options (Distractors) Fail:</h5>
                   <ul>
                     ${q.distractorAnalysis.map((d) => `<li>${escapeHtml(d)}</li>`).join("")}
                   </ul>
@@ -877,7 +876,7 @@
                   : ""
               }
               <div class="exam-tip-callout">
-                <strong>🎯 ISC2 Exam Tip:</strong> ${escapeHtml(q.examTip)}
+                <strong>ISC2 Exam Tip:</strong> ${escapeHtml(q.examTip)}
               </div>
             </div>
           `
@@ -886,13 +885,13 @@
 
           <div class="card-footer-actions">
             <button class="btn btn-outline" ${idx === 0 ? "disabled" : ""} onclick="app.goToQuizIndex(${idx - 1})">
-              ← Previous Question
+              &larr; Previous Question
             </button>
             <div style="display:flex;gap:0.65rem;">
               ${
                 idx < qz.questions.length - 1
-                  ? `<button class="btn btn-primary" onclick="app.goToQuizIndex(${idx + 1})">Next Question →</button>`
-                  : `<button class="btn btn-success btn-large" onclick="app.finishQuiz()">🏁 Finish &amp; View Diagnostic Report</button>`
+                  ? `<button class="btn btn-primary" onclick="app.goToQuizIndex(${idx + 1})">Next Question &rarr;</button>`
+                  : `<button class="btn btn-success btn-large" onclick="app.finishQuiz()">Finish &amp; View Diagnostic Report</button>`
               }
               ${
                 Object.keys(qz.answers).length > 0 && idx < qz.questions.length - 1
@@ -932,7 +931,6 @@
 
       qz.answers[idx] = optIdx;
 
-      // Record in persistent history immediately in Learn mode
       if (qz.mode === "learn") {
         const prev = state.questionHistory[q.id] || { attempts: 0 };
         state.questionHistory[q.id] = {
@@ -1019,7 +1017,7 @@
         <div class="study-card-stage" style="max-width:1020px;margin:0 auto;">
           <div style="text-align:center;padding-bottom:1.5rem;border-bottom:1px solid var(--border-color);">
             <div class="badge ${passed ? "badge-high" : "badge-critical"}" style="font-size:0.9rem;padding:0.35rem 1rem;margin-bottom:0.75rem;">
-              ${passed ? "🏆 STRONG PERFORMANCE (PASSING PACE)" : "📚 KEEP STUDYING — REVIEW EXPLANATIONS BELOW"}
+              ${passed ? "STRONG PERFORMANCE (PASSING PACE)" : "KEEP STUDYING — REVIEW EXPLANATIONS BELOW"}
             </div>
             <h2 style="font-size:2.2rem;font-weight:800;margin-bottom:0.35rem;">
               You Scored ${correctTotal} / ${total} (${pct}%)
@@ -1029,9 +1027,9 @@
               Mode: <strong>${qz.mode === "learn" ? "Deep-Learn Practice" : "Timed Exam Simulation"}</strong>
             </p>
             <div style="display:flex;justify-content:center;gap:0.75rem;margin-top:1.25rem;flex-wrap:wrap;">
-              <button class="btn btn-primary" onclick="app.exitQuizToSetup()">🔄 Configure New Quiz</button>
-              <button class="btn btn-outline" onclick="app.quickStartQuiz('missed', 'all', 20)">🎯 Retry Missed Questions</button>
-              <button class="btn btn-outline" onclick="app.switchTab('dashboard')">📊 Return to Dashboard</button>
+              <button class="btn btn-primary" onclick="app.exitQuizToSetup()">Configure New Quiz</button>
+              <button class="btn btn-outline" onclick="app.quickStartQuiz('missed', 'all', 20)">Retry Missed Questions</button>
+              <button class="btn btn-outline" onclick="app.switchTab('dashboard')">Return to Dashboard</button>
             </div>
           </div>
 
@@ -1073,10 +1071,10 @@
                       <span style="font-weight:800;color:${isCorrect ? "var(--success)" : "var(--danger)"}">
                         ${
                           chosen === undefined
-                            ? `⚪ Unanswered (Correct: ${letters[q.correctIndex]})`
+                            ? `Unanswered (Correct: ${letters[q.correctIndex]})`
                             : isCorrect
-                            ? `✅ Correct (${letters[chosen]})`
-                            : `❌ Your Answer: ${letters[chosen]} | Correct: ${letters[q.correctIndex]}`
+                            ? `Correct (${letters[chosen]})`
+                            : `Your Answer: ${letters[chosen]} | Correct: ${letters[q.correctIndex]}`
                         }
                       </span>
                     </div>
@@ -1097,7 +1095,7 @@
                       <strong>Explanation:</strong> ${escapeHtml(q.explanation)}
                     </div>
                     <div class="exam-tip-callout" style="margin-top:0.6rem;">
-                      <strong>🎯 Exam Tip:</strong> ${escapeHtml(q.examTip)}
+                      <strong>Exam Tip:</strong> ${escapeHtml(q.examTip)}
                     </div>
                   </div>
                 `;
@@ -1123,8 +1121,8 @@
     toggleRevealAllQBank() {
       this.qbankRevealAll = !this.qbankRevealAll;
       document.getElementById("qbank-reveal-all-btn").textContent = this.qbankRevealAll
-        ? "🙈 Hide All Explanations"
-        : "👁️ Reveal All Explanations";
+        ? "Hide All Explanations"
+        : "Reveal All Explanations";
       this.renderQBankView();
     },
 
@@ -1172,10 +1170,10 @@
           const isBookmarked = !!state.questionBookmarks[q.id];
           const hist = state.questionHistory[q.id];
           const histBadge = !hist
-            ? `<span class="badge badge-topic">⚪ Unanswered</span>`
+            ? `<span class="badge badge-topic">Unanswered</span>`
             : hist.correct
-            ? `<span class="badge" style="background:var(--success-bg);color:var(--success);">✅ Answered Correctly</span>`
-            : `<span class="badge" style="background:var(--danger-bg);color:var(--danger);">❌ Missed Previously</span>`;
+            ? `<span class="badge" style="background:var(--success-bg);color:var(--success);">Answered Correctly</span>`
+            : `<span class="badge" style="background:var(--danger-bg);color:var(--danger);">Missed Previously</span>`;
 
           return `
             <div class="qbank-item">
@@ -1188,10 +1186,10 @@
                 </div>
                 <div style="display:flex;gap:0.45rem;">
                   <button class="status-btn" onclick="app.toggleQuestionBookmark('${q.id}', false)">
-                    ${isBookmarked ? "⭐ Bookmarked" : "☆ Bookmark"}
+                    ${isBookmarked ? "Bookmarked" : "Bookmark"}
                   </button>
                   <button class="btn btn-outline btn-sm" onclick="app.toggleSingleQBankReveal('${q.id}')">
-                    ${isRevealed ? "🙈 Hide Answer" : "👁️ Show Answer &amp; Deep Explanation"}
+                    ${isRevealed ? "Hide Answer" : "Show Answer &amp; Deep Explanation"}
                   </button>
                 </div>
               </div>
@@ -1217,14 +1215,14 @@
                   ? `
                 <div class="quiz-explanation-panel" style="margin-top:1rem;">
                   <div class="exp-verdict" style="color:var(--success);">
-                    ✅ Correct Answer: ${letters[q.correctIndex]}
+                    Correct Answer: ${letters[q.correctIndex]}
                   </div>
                   <div class="exp-core">${escapeHtml(q.explanation)}</div>
                   ${
                     q.distractorAnalysis && q.distractorAnalysis.length
                       ? `
                     <div class="distractor-box">
-                      <h5>🔍 Distractor Analysis (Why Other Choices Fail):</h5>
+                      <h5>Distractor Analysis (Why Other Choices Fail):</h5>
                       <ul>
                         ${q.distractorAnalysis.map((d) => `<li>${escapeHtml(d)}</li>`).join("")}
                       </ul>
@@ -1233,7 +1231,7 @@
                       : ""
                   }
                   <div class="exam-tip-callout">
-                    <strong>🎯 ISC2 Exam Tip:</strong> ${escapeHtml(q.examTip)}
+                    <strong>ISC2 Exam Tip:</strong> ${escapeHtml(q.examTip)}
                   </div>
                 </div>
               `
@@ -1346,7 +1344,7 @@
       container.innerHTML = `
         <div class="domains-grid">
           <div class="domain-card">
-            <h4>🌡️ Datacenter Physical &amp; Environmental (Domain 3)</h4>
+            <h4>Datacenter Physical &amp; Environmental (Domain 3)</h4>
             <ul style="padding-left:1.2rem;font-size:0.9rem;margin-top:0.5rem;">
               <li><strong>ASHRAE Temperature (Cold Aisle Intake):</strong> 64.4°F to 80.6°F (18°C to 27°C)</li>
               <li><strong>Relative Humidity Range:</strong> 40% to 60% RH (Dew point 15.8°F to 59°F / -9°C to 15°C)</li>
@@ -1360,7 +1358,7 @@
           </div>
 
           <div class="domain-card">
-            <h4>💰 Quantitative Risk &amp; BCDR Formulas (Domain 1 &amp; 6)</h4>
+            <h4>Quantitative Risk &amp; BCDR Formulas (Domain 1 &amp; 6)</h4>
             <ul style="padding-left:1.2rem;font-size:0.9rem;margin-top:0.5rem;">
               <li><strong>SLE (Single Loss Expectancy):</strong> <code>SLE = Asset Value (AV) × Exposure Factor (EF)</code></li>
               <li><strong>ALE (Annualized Loss Expectancy):</strong> <code>ALE = SLE × Annualized Rate of Occurrence (ARO)</code></li>
@@ -1373,7 +1371,7 @@
           </div>
 
           <div class="domain-card">
-            <h4>🔑 Identity &amp; Federation Protocols (Domain 3 &amp; 4)</h4>
+            <h4>Identity &amp; Federation Protocols (Domain 3 &amp; 4)</h4>
             <ul style="padding-left:1.2rem;font-size:0.9rem;margin-top:0.5rem;">
               <li><strong>SAML 2.0:</strong> XML-based OASIS standard for Browser Enterprise SSO (Authentication + Authorization assertions).</li>
               <li><strong>OAuth 2.0:</strong> JSON/HTTP framework strictly for <em>Delegated Authorization</em> (Access Tokens—NOT Authentication!).</li>
@@ -1384,7 +1382,7 @@
           </div>
 
           <div class="domain-card">
-            <h4>🧪 AppSec Testing &amp; Defense Matrix (Domain 4)</h4>
+            <h4>AppSec Testing &amp; Defense Matrix (Domain 4)</h4>
             <ul style="padding-left:1.2rem;font-size:0.9rem;margin-top:0.5rem;">
               <li><strong>SAST (Static):</strong> White-Box; scans uncompiled source code at rest (Early SDLC / Coding phase).</li>
               <li><strong>DAST (Dynamic):</strong> Black-Box; probes running app from outside over HTTP without source code (Testing/QA phase).</li>
@@ -1396,7 +1394,7 @@
           </div>
 
           <div class="domain-card">
-            <h4>🕵️ Digital Forensics &amp; Syslog Numbers (Domain 5)</h4>
+            <h4>Digital Forensics &amp; Syslog Numbers (Domain 5)</h4>
             <ul style="padding-left:1.2rem;font-size:0.9rem;margin-top:0.5rem;">
               <li><strong>Order of Volatility (RFC 3227):</strong> 1. CPU Registers/Cache &rarr; 2. RAM / Routing / ARP &rarr; 3. Swap/Temp &rarr; 4. Disk Volumes &rarr; 5. Remote Logs &rarr; 6. Archival Media.</li>
               <li><strong>NIST SP 800-61 IR Phases:</strong> 1. Preparation &rarr; 2. Detection &amp; Analysis &rarr; 3. Containment, Eradication &amp; Recovery &rarr; 4. Post-Incident Activity.</li>
@@ -1406,7 +1404,7 @@
           </div>
 
           <div class="domain-card">
-            <h4>⚖️ Legal, Privacy &amp; Data Security Rules (Domain 2 &amp; 6)</h4>
+            <h4>Legal, Privacy &amp; Data Security Rules (Domain 2 &amp; 6)</h4>
             <ul style="padding-left:1.2rem;font-size:0.9rem;margin-top:0.5rem;">
               <li><strong>Cloud Data Lifecycle (CSUADS):</strong> Create (Classify here!) &rarr; Store &rarr; Use &rarr; Share &rarr; Archive &rarr; Destroy (Crypto-Shredding).</li>
               <li><strong>GDPR Breach Notification:</strong> Data Controller must notify Supervisory Authority within <strong>72 hours</strong>.</li>

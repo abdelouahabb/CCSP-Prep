@@ -3,7 +3,7 @@ window.CCSP_DOMAIN_1 = {
   number: 1,
   title: "Cloud Concepts, Architecture and Design",
   weight: "17%",
-  color: "#3b82f6",
+  color: "#1d4ed8",
   icon: "cloud-cog",
   examMindset: "In Domain 1, ISC2 tests whether you understand the foundational definitions (ISO/IEC 17788 & NIST SP 800-145), reference architectures (ISO/IEC 17789), and the Shared Responsibility Model. Always remember: the cloud customer is ALWAYS ultimately legally and contractually accountable for data and compliance—you can transfer risk (via insurance) or delegate operational tasks (to a CSP), but you can NEVER transfer ultimate accountability.",
   cards: [
